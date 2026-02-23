@@ -1,0 +1,57 @@
+.container {
+  padding: 20rpx;
+}
+.header {
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.item-list {
+  display: flex;
+  flex-direction: column;
+}
+.item-card {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-card.disabled {
+  opacity: 0.5;
+}
+.item-id {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.footer {
+  margin-top: 40rpx;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  width: 80%;
+  text-align: center;
+}
+.password-value {
+  font-size: 60rpx;
+  color: #07c160;
+  display: block;
+  margin: 30rpx 0;
+  font-weight: bold;
+}

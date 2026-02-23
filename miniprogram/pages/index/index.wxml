@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="header">
+    <text class="title">无人值守车钥匙/加油卡管理</text>
+  </view>
+
+  <view class="item-list">
+    <block wx:for="{{items}}" wx:key="_id">
+      <view class="item-card {{item.status === 'available' ? '' : 'disabled'}}" bindtap="selectItem" data-id="{{item._id}}" data-identifier="{{item.identifier}}">
+        <text class="item-id">{{item.identifier}}</text>
+        <text class="item-type">{{item.type === 'vehicle_key' ? '车钥匙' : '加油卡'}}</text>
+        <text class="item-status">{{item.status === 'available' ? '可领取' : '已领用'}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="footer" wx:if="{{selectedItem}}">
+    <button type="primary" bindtap="confirmPickup">确认领取 {{selectedItem.identifier}}</button>
+  </view>
+
+  <view class="modal" wx:if="{{assignedPassword}}">
+    <view class="modal-content">
+      <text class="modal-title">领取成功</text>
+      <text class="password-label">临时密码：</text>
+      <text class="password-value">{{assignedPassword}}</text>
+      <button bindtap="closeModal">确定</button>
+    </view>
+  </view>
+</view>

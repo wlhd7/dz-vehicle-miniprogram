@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text class="title">我的待归还项目</text>
+  </view>
+
+  <view class="item-list">
+    <block wx:for="{{activeItems}}" wx:key="_id">
+      <view class="item-card">
+        <view class="info">
+          <text class="item-id">{{item.identifier}}</text>
+          <text class="item-type">{{item.type === 'vehicle_key' ? '车钥匙' : '加油卡'}}</text>
+        </view>
+        <button type="warn" size="mini" bindtap="confirmReturn" data-id="{{item._id}}">归还</button>
+      </view>
+    </block>
+    <view wx:if="{{activeItems.length === 0}}" class="empty">暂无待归还项目</view>
+  </view>
+
+  <view class="modal" wx:if="{{assignedPassword}}">
+    <view class="modal-content">
+      <text class="modal-title">归还申请成功</text>
+      <text class="password-label">请将钥匙/卡放入并输入密码：</text>
+      <text class="password-value">{{assignedPassword}}</text>
+      <button bindtap="closeModal">确定</button>
+    </view>
+  </view>
+</view>

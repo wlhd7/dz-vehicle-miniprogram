@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <text class="title">管理后台</text>
+  </view>
+  
+  <view class="stats">
+    <view class="stat-card">
+      <text class="stat-label">待领用项目</text>
+      <text class="stat-value">{{availableCount}}</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-label">剩余密码</text>
+      <text class="stat-value {{passwordCount < 30 ? 'low' : ''}}">{{passwordCount}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">最近记录</text>
+    <block wx:for="{{recentLogs}}" wx:key="_id">
+      <view class="log-card">
+        <text>{{item.userNickname}} {{item.actionType === 'pickup' ? '领取' : '归还'}} {{item.itemId}}</text>
+        <text class="time">{{item.timestamp}}</text>
+      </view>
+    </block>
+  </view>
+</view>

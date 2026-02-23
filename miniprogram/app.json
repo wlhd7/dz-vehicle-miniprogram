@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/active/active",
+    "pages/admin/admin"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "无人值守车钥匙管理",
+    "navigationBarTextStyle": "black"
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json"
+}
